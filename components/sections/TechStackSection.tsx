@@ -26,6 +26,15 @@ const partners: Partner[] = [
     badgeColor: 'bg-slate-600 text-slate-100',
   },
   {
+    name: 'Node.js',
+    icon: 'fa-brands fa-node-js',
+    iconColor: 'text-green-100',
+    bgFrom: 'from-green-600',
+    bgTo: 'to-green-800',
+    badge: 'Backend',
+    badgeColor: 'bg-green-600 text-green-100',
+  },
+  {
     name: 'PostgreSQL',
     icon: 'fa-solid fa-database',
     iconColor: 'text-sky-200',
@@ -79,6 +88,24 @@ const partners: Partner[] = [
     badge: 'Cloud',
     badgeColor: 'bg-orange-500 text-orange-950',
   },
+  {
+    name: 'Render',
+    icon: 'fa-solid fa-server',
+    iconColor: 'text-violet-100',
+    bgFrom: 'from-violet-600',
+    bgTo: 'to-purple-800',
+    badge: 'Hosting',
+    badgeColor: 'bg-violet-600 text-violet-100',
+  },
+  {
+    name: 'Vercel',
+    icon: 'fa-solid fa-triangle',
+    iconColor: 'text-white',
+    bgFrom: 'from-zinc-700',
+    bgTo: 'to-zinc-900',
+    badge: 'Deployment',
+    badgeColor: 'bg-zinc-600 text-zinc-100',
+  },
 ];
 
 export function TechStackSection() {
@@ -121,7 +148,7 @@ export function TechStackSection() {
 
         {/* Partner Cards */}
         <motion.div
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
           {...staggerContainer}
         >
           {partners.map((partner) => (
