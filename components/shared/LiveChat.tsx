@@ -78,7 +78,7 @@ export function LiveChat() {
       <div className="fixed bottom-6 right-6 z-45 flex flex-col gap-3">
         {/* WhatsApp Floater */}
         <a
-          href="https://wa.me/251911123456"
+          href="https://wa.me/251977784658"
           target="_blank"
           rel="noopener noreferrer"
           className="w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center text-xl shadow-xl hover:scale-110 transition-transform cursor-pointer"
@@ -105,7 +105,7 @@ export function LiveChat() {
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
               <span className="font-bold text-xs">
-                {language === 'am' ? 'ETBooking ወኪል ቀጥታ' : 'ETBooking Agent Live'}
+                {language === 'am' ? 'Booking Solutions ወኪል ቀጥታ' : 'Booking Solutions Agent Live'}
               </span>
             </div>
             <button

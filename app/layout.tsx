@@ -18,7 +18,7 @@ const notoEthiopic = Noto_Sans_Ethiopic({
 });
 
 export const metadata: Metadata = {
-  title: 'ETBooking Solutions | Smart Booking Systems for Modern Service Businesses',
+  title: 'Booking Solutions | Smart Booking Systems for Modern Service Businesses',
   description:
     'Custom booking platforms for salons, clinics, gyms, car washes, and service businesses in Ethiopia. Secure local payments, SMS notifications, and staff management.',
   keywords: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     'SMS notifications',
   ],
   openGraph: {
-    title: 'ETBooking Solutions | Smart Booking Platforms',
+    title: 'Booking Solutions | Smart Booking Platforms',
     description: 'Custom booking systems designed for Ethiopian service businesses',
     type: 'website',
     locale: 'en_US',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ETBooking Solutions',
+    title: 'Booking Solutions',
     description: 'Smart booking platforms for service businesses',
   },
 };

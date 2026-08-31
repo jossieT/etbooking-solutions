@@ -146,7 +146,7 @@ Create a `.env.local` file:
 ```env
 NEXT_PUBLIC_SITE_URL=https://yourdomain.com
 NEXT_PUBLIC_COMPANY_EMAIL=info@etbookingsolutions.com
-NEXT_PUBLIC_PHONE=+251911123456
+NEXT_PUBLIC_PHONE=+251977784658
 ```
 
 ---
@@ -198,6 +198,6 @@ ETBooking Solutions
 
 📍 Addis Ababa, Ethiopia
 
-📞 +251 977784658
+📞 +251 977 784 658
 
 📧 [info@etbookingsolutions.com](mailto:info@etbookingsolutions.com)

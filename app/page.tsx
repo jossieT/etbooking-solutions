@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
+import { BookingSandboxSection } from '@/components/sections/BookingSandboxSection';
 import { IndustriesSection } from '@/components/sections/IndustriesSection';
 import { SolutionsSection } from '@/components/sections/SolutionsSection';
 import { CalculatorSection } from '@/components/sections/CalculatorSection';
@@ -34,6 +35,9 @@ export default function Home() {
       <main>
         {/* Hero Area */}
         <HeroSection />
+
+        {/* Standalone Interactive Booking Sandbox */}
+        <BookingSandboxSection />
 
         {/* Industry Focus */}
         <IndustriesSection />

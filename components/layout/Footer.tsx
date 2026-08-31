@@ -20,7 +20,7 @@ export function Footer() {
                 <Calendar className="w-5 h-5 text-white" />
               </div>
               <span className="text-lg font-bold text-white tracking-tight">
-                ETBooking Solutions
+                Booking Solutions
               </span>
             </div>
             <p className="text-slate-500 leading-relaxed max-w-xs">
@@ -124,7 +124,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500">
           <span>
-            © {currentYear} ETBooking Solutions. {t('foot_copy')}
+            © {currentYear} Booking Solutions. {t('foot_copy')}
           </span>
           <span>Designed & Programmed Dynamically. Addis Ababa, Ethiopia.</span>
         </div>

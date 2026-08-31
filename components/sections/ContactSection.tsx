@@ -19,7 +19,7 @@ const contactSchema = z.object({
   businessName: z.string().min(2, { message: 'Business name must be at least 2 characters' }),
   email: z.string().email({ message: 'Invalid email address' }),
   phone: z.string().refine((val: string) => ethiopianPhoneRegex.test(val), {
-    message: 'Invalid phone number. Must be a valid Ethiopian number (e.g. +251 911 123 456 or 0911123456)',
+    message: 'Invalid phone number. Must be a valid Ethiopian number (e.g. +251 977 784 658 or 0977784658)',
   }),
   requirements: z.string().min(5, { message: 'Please provide more details' }),
 });
@@ -89,7 +89,10 @@ export function ContactSection({ requirementsText }: ContactSectionProps) {
 
             {/* Direct Contact Points */}
             <div className="space-y-4 text-sm">
-              <div className="flex items-center gap-4 p-4 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-white dark:bg-slate-900 shadow-sm">
+              <a
+                href="tel:+251977784658"
+                className="flex items-center gap-4 p-4 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-white dark:bg-slate-900 shadow-sm hover:border-primary-500 transition-colors"
+              >
                 <div className="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-950 text-primary-600 dark:text-primary-400 flex items-center justify-center text-lg flex-shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
@@ -97,11 +100,16 @@ export function ContactSection({ requirementsText }: ContactSectionProps) {
                   <span className="block text-slate-400 text-[10px] uppercase font-bold">
                     {t('cont_p')}
                   </span>
-                  <span className="font-bold text-slate-800 dark:text-slate-200">+251 911 123 456</span>
+                  <span className="font-bold text-slate-800 dark:text-slate-200">+251 977 784 658</span>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-4 p-4 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-white dark:bg-slate-900 shadow-sm">
+              <a
+                href="https://wa.me/251977784658"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-white dark:bg-slate-900 shadow-sm hover:border-emerald-500 transition-colors"
+              >
                 <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg flex-shrink-0">
                   <i className="fa-brands fa-whatsapp text-xl"></i>
                 </div>
@@ -109,9 +117,9 @@ export function ContactSection({ requirementsText }: ContactSectionProps) {
                   <span className="block text-slate-400 text-[10px] uppercase font-bold">
                     WhatsApp Business
                   </span>
-                  <span className="font-bold text-slate-800 dark:text-slate-200">+251 911 123 456</span>
+                  <span className="font-bold text-slate-800 dark:text-slate-200">+251 977 784 658</span>
                 </div>
-              </div>
+              </a>
 
               <div className="flex items-center gap-4 p-4 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-white dark:bg-slate-900 shadow-sm">
                 <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center text-lg flex-shrink-0">
@@ -211,7 +219,7 @@ export function ContactSection({ requirementsText }: ContactSectionProps) {
                   </label>
                   <input
                     type="tel"
-                    placeholder="+251 911 123 456"
+                    placeholder="+251 977 784 658"
                     {...register('phone')}
                     className={`w-full bg-slate-50 dark:bg-slate-800 border p-3.5 rounded-xl text-xs outline-none transition-all ${
                       errors.phone

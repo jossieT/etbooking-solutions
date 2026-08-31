@@ -126,7 +126,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Samson Tadesse',
     role: 'Owner, Samson Grooming Studio',
     image: 'https://placehold.co/100x100/3b82f6/ffffff?text=S',
-    review: 'ETBooking completely revolutionized how we run our premium barbershop lanes. Customers book directly on our website, pay using Telebirr, and staff get notified on their calendars. It has completely eliminated front-desk phones!',
+    review: 'Booking Solutions completely revolutionized how we run our premium barbershop lanes. Customers book directly on our website, pay using Telebirr, and staff get notified on their calendars. It has completely eliminated front-desk phones!',
     rating: 5,
   },
   {

@@ -11,7 +11,7 @@ export const en = {
   // Hero Section
   hero_badge: "Custom Enterprise Platforms Designed for Ethiopia",
   hero_title: "Custom Booking Platforms That Help Service Businesses Grow",
-  hero_desc: "From car detailing and barbershops to clinics, gyms, salons, cleaning companies, and professional services, ETBooking Solutions builds powerful booking systems that automate appointments, increase efficiency, and improve customer experience.",
+  hero_desc: "From car detailing and barbershops to clinics, gyms, salons, cleaning companies, and professional services, Booking Solutions builds powerful booking systems that automate appointments, increase efficiency, and improve customer experience.",
   hero_cta_consult: "Book Free Consultation",
   hero_cta_demo: "Estimate System Cost",
   trust_1: "Secure Local Payments",
@@ -126,7 +126,7 @@ export const en = {
   cap_m_desc: "More than 85% of users in Ethiopia schedule services using mobile devices. Our platforms are built with mobile-first rendering engines. Whether on Android, iOS, or inside Telegram wrappers, we optimize speed and responsiveness flawlessly.",
 
   // Why Choose Section
-  why_badge: "The ETBooking Advantage",
+  why_badge: "The Booking Solutions Advantage",
   why_title: "Why Local & Global Enterprises Trust Us",
   why_desc: "We merge international SaaS engineering architectures with customized local execution frameworks, ensuring highly performant products that comply with both Ethiopian infrastructure constraints and global security standards.",
   why_p1_t: "Localized Technical Stack",
@@ -169,7 +169,7 @@ export const en = {
   test_badge: "Client Reviews",
   test_title: "Trusted by Modern Business Leaders",
   test_desc: "Real impact reported by service business owners automating operations in Addis Ababa.",
-  test_review1: "ETBooking completely revolutionized how we run our premium barbershop lanes. Customers book directly on our website, pay using Telebirr, and staff get notified on their calendars. It has completely eliminated front-desk phones!",
+  test_review1: "Booking Solutions completely revolutionized how we run our premium barbershop lanes. Customers book directly on our website, pay using Telebirr, and staff get notified on their calendars. It has completely eliminated front-desk phones!",
   test_role1: "Owner, Samson Grooming Studio",
   test_review2: "The automatic Ethio Telecom SMS notifications have completely resolved missed appointments for our clinic. Patient booking is seamless, and their technical support team in Addis Ababa has been incredibly fast.",
   test_role2: "Medical Director, Bole Dental",
@@ -211,5 +211,5 @@ export const en = {
   foot_h1: "Solutions",
   foot_h2: "Industries",
   foot_h3: "Company",
-  foot_copy: "© 2026 ETBooking Solutions. All Rights Reserved.",
+  foot_copy: "© 2026 Booking Solutions. All Rights Reserved.",
 };

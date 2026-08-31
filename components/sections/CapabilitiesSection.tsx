@@ -229,7 +229,7 @@ export function CapabilitiesSection() {
                         </div>
                       </div>
                       <span className="text-[7px] text-slate-500 text-center font-medium block">
-                        Secure checkout powered by ETBooking
+                        Secure checkout powered by Booking Solutions
                       </span>
                     </div>
                   </div>

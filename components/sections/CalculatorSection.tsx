@@ -56,7 +56,7 @@ export function CalculatorSection({ onProposalRequest }: CalculatorSectionProps)
 
     const bizName = PRICING_CONFIG.businesses[businessType as keyof typeof PRICING_CONFIG.businesses]?.name || 'custom';
     
-    const detailsText = `Hello ETBooking, we would like a custom proposal for our ${bizName} business. We selected capabilities including: ${
+    const detailsText = `Hello Booking Solutions, we would like a custom proposal for our ${bizName} business. We selected capabilities including: ${
       requirements.join(', ') || 'Base Engine'
     }. Please contact us back with technical layouts.`;
 
