@@ -78,7 +78,7 @@ export function BookingSandboxSection() {
   };
 
   return (
-    <section id="sandbox" className="py-20 sm:py-28 relative scroll-mt-20">
+    <section id="sandbox" className="pt-4 pb-20 sm:pt-6 sm:pb-28 relative scroll-mt-20">
       {/* Background ambient accents */}
       <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-primary-500/5 rounded-full blur-[140px]" />
@@ -88,7 +88,7 @@ export function BookingSandboxSection() {
         {/* Section Header */}
         <motion.div
           {...fadeInUp}
-          className="text-center space-y-3 mb-12 sm:mb-16"
+          className="text-center space-y-3 mb-8 sm:mb-10"
         >
           <div className="inline-flex items-center space-x-2 bg-primary-50 dark:bg-primary-950/60 border border-primary-100 dark:border-primary-900 px-3.5 py-1.5 rounded-full">
             <Sparkles className="w-3.5 h-3.5 text-primary-600 dark:text-primary-400" />

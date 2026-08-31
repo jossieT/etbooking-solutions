@@ -33,7 +33,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative pt-36 pb-20 sm:pt-44 sm:pb-28 overflow-hidden">
+    <section className="relative pt-32 pb-6 sm:pt-40 sm:pb-8 overflow-hidden">
       {/* Background Visual Interest (Grid & Mesh Gradients) */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
         {/* Ambient Blurred Mesh Glows */}
@@ -107,7 +107,7 @@ export function HeroSection() {
           {/* Trust Indicators Row */}
           <motion.div
             variants={itemVariants}
-            className="pt-8 sm:pt-10 w-full max-w-2xl mx-auto"
+            className="pt-5 sm:pt-6 w-full max-w-2xl mx-auto"
           >
             <div className="flex flex-wrap items-center justify-center gap-y-3 gap-x-6 sm:gap-x-8 py-3.5 px-6 rounded-2xl bg-slate-100/60 dark:bg-slate-900/50 border border-slate-200/60 dark:border-slate-800/60 backdrop-blur-sm text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400">
               <div className="flex items-center space-x-2">
