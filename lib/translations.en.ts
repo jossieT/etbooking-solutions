@@ -37,6 +37,10 @@ export const en = {
   sb_v4_success: "Booking Successfully Simulated!",
   sb_v4_desc: "In production, clients receive an instant automated SMS text via Ethio Telecom, while staff calendars are instantly synched with calendar notifications.",
   sb_v4_restart: "← Try with another service",
+  sandbox_service_auto_detail: "Premium Auto Detail",
+  sandbox_service_auto_detail_desc: "Full exterior wash, paint polish & interior deep clean",
+  sandbox_service_vip_grooming: "VIP Grooming Session",
+  sandbox_service_vip_grooming_desc: "Expert haircut, hot towel shave & skin treatment",
 
   // Industries Section
   ind_sub: "Industries We Serve",

@@ -1,14 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from '@/hooks/useTranslation';
 import { fadeInUp } from '@/lib/animations';
 import { Sparkles, CheckCircle2, RotateCcw, Clock, User, Calendar, CreditCard, ChevronRight } from 'lucide-react';
 
 interface SandboxService {
-  name: string;
   price: number;
   duration: string;
   type: string;
@@ -19,35 +17,61 @@ interface SandboxService {
   nameKey: string;
 }
 
+interface SandboxStaff {
+  id: string;
+  displayName: string;
+  title: string;
+  initials: string;
+  avatarBg: string;
+  avatarText: string;
+}
+
 export function BookingSandboxSection() {
   const { t, language } = useTranslation();
   const [sandboxStep, setSandboxStep] = useState<1 | 2 | 3 | 4>(1);
   const [selectedService, setSelectedService] = useState<SandboxService | null>(null);
-  const [selectedStaff, setSelectedStaff] = useState<string | null>(null);
+  const [selectedStaff, setSelectedStaff] = useState<SandboxStaff | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
 
   const services: SandboxService[] = [
     {
-      name: 'Premium Car Wash & Detail',
-      nameKey: 'sb_serv1',
+      nameKey: 'sandbox_service_auto_detail',
       price: 2800,
       duration: '90 mins',
       type: 'detailing',
       icon: 'fa-solid fa-car',
       iconColor: 'text-blue-600 dark:text-blue-400',
       bgColor: 'bg-blue-100 dark:bg-blue-950/50',
-      descKey: 'sb_serv1_desc',
+      descKey: 'sandbox_service_auto_detail_desc',
     },
     {
-      name: 'VIP Grooming Session',
-      nameKey: 'sb_serv2',
+      nameKey: 'sandbox_service_vip_grooming',
       price: 1200,
       duration: '45 mins',
       type: 'barber',
       icon: 'fa-solid fa-scissors',
       iconColor: 'text-amber-600 dark:text-amber-400',
       bgColor: 'bg-amber-100 dark:bg-amber-950/50',
-      descKey: 'sb_serv2_desc',
+      descKey: 'sandbox_service_vip_grooming_desc',
+    },
+  ];
+
+  const staffMembers: SandboxStaff[] = [
+    {
+      id: 'yared',
+      displayName: 'Yared T.',
+      title: 'Senior Specialist',
+      initials: 'YT',
+      avatarBg: 'bg-blue-600',
+      avatarText: 'text-white',
+    },
+    {
+      id: 'elena',
+      displayName: 'Elena K.',
+      title: 'Lead Professional',
+      initials: 'EK',
+      avatarBg: 'bg-emerald-500',
+      avatarText: 'text-white',
     },
   ];
 
@@ -56,7 +80,7 @@ export function BookingSandboxSection() {
     setSandboxStep(2);
   };
 
-  const handleSelectStaff = (staff: string) => {
+  const handleSelectStaff = (staff: SandboxStaff) => {
     setSelectedStaff(staff);
     if (selectedTime) {
       setSandboxStep(3);
@@ -313,57 +337,34 @@ export function BookingSandboxSection() {
                       {t('sb_v2_staff')}
                     </h5>
                     <div className="grid sm:grid-cols-2 gap-3">
-                      <button
-                        onClick={() => handleSelectStaff('Yared')}
-                        className={`flex items-center justify-between p-3.5 rounded-xl border transition-all text-left ${
-                          selectedStaff === 'Yared'
-                            ? 'border-primary-500 bg-primary-50/80 dark:bg-primary-950/50 shadow-sm'
-                            : 'border-slate-200 dark:border-slate-800 hover:border-primary-500 bg-slate-50/60 dark:bg-slate-800/40'
-                        }`}
-                      >
-                        <div className="flex items-center gap-3">
-                          <Image
-                            src="https://placehold.co/100x100/3b82f6/ffffff?text=Y"
-                            width={38}
-                            height={38}
-                            className="rounded-full shadow-sm"
-                            alt="Yared"
-                          />
-                          <div>
-                            <h6 className="text-sm font-bold text-slate-900 dark:text-white">Yared T.</h6>
-                            <p className="text-[11px] text-slate-500 dark:text-slate-400">Senior Specialist</p>
+                      {staffMembers.map((staff) => (
+                        <button
+                          key={staff.id}
+                          onClick={() => handleSelectStaff(staff)}
+                          className={`flex items-center justify-between p-3.5 rounded-xl border transition-all text-left ${
+                            selectedStaff?.id === staff.id
+                              ? 'border-primary-500 bg-primary-50/80 dark:bg-primary-950/50 shadow-sm'
+                              : 'border-slate-200 dark:border-slate-800 hover:border-primary-500 bg-slate-50/60 dark:bg-slate-800/40'
+                          }`}
+                        >
+                          <div className="flex items-center gap-3">
+                            {/* CSS initials avatar */}
+                            <div
+                              className={`w-[38px] h-[38px] rounded-full ${staff.avatarBg} ${staff.avatarText} flex items-center justify-center text-xs font-extrabold shadow-sm select-none flex-shrink-0`}
+                              aria-hidden="true"
+                            >
+                              {staff.initials}
+                            </div>
+                            <div>
+                              <h6 className="text-sm font-bold text-slate-900 dark:text-white">{staff.displayName}</h6>
+                              <p className="text-[11px] text-slate-500 dark:text-slate-400">{staff.title}</p>
+                            </div>
                           </div>
-                        </div>
-                        <span className="text-[10px] font-semibold bg-emerald-100 dark:bg-emerald-950/70 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 rounded-full border border-emerald-200 dark:border-emerald-900">
-                          {t('sb_avail')}
-                        </span>
-                      </button>
-
-                      <button
-                        onClick={() => handleSelectStaff('Elena')}
-                        className={`flex items-center justify-between p-3.5 rounded-xl border transition-all text-left ${
-                          selectedStaff === 'Elena'
-                            ? 'border-primary-500 bg-primary-50/80 dark:bg-primary-950/50 shadow-sm'
-                            : 'border-slate-200 dark:border-slate-800 hover:border-primary-500 bg-slate-50/60 dark:bg-slate-800/40'
-                        }`}
-                      >
-                        <div className="flex items-center gap-3">
-                          <Image
-                            src="https://placehold.co/100x100/10b981/ffffff?text=E"
-                            width={38}
-                            height={38}
-                            className="rounded-full shadow-sm"
-                            alt="Elena"
-                          />
-                          <div>
-                            <h6 className="text-sm font-bold text-slate-900 dark:text-white">Elena K.</h6>
-                            <p className="text-[11px] text-slate-500 dark:text-slate-400">Lead Professional</p>
-                          </div>
-                        </div>
-                        <span className="text-[10px] font-semibold bg-emerald-100 dark:bg-emerald-950/70 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 rounded-full border border-emerald-200 dark:border-emerald-900">
-                          {t('sb_avail')}
-                        </span>
-                      </button>
+                          <span className="text-[10px] font-semibold bg-emerald-100 dark:bg-emerald-950/70 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 rounded-full border border-emerald-200 dark:border-emerald-900">
+                            {t('sb_avail')}
+                          </span>
+                        </button>
+                      ))}
                     </div>
                   </div>
 
@@ -427,8 +428,16 @@ export function BookingSandboxSection() {
                         <User className="w-3.5 h-3.5" />
                         {t('sb_v3_staff')}
                       </span>
-                      <span className="font-semibold text-slate-900 dark:text-white">
-                        {selectedStaff} T.
+                      <span className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white">
+                        {selectedStaff && (
+                          <span
+                            className={`w-6 h-6 rounded-full ${selectedStaff.avatarBg} ${selectedStaff.avatarText} flex items-center justify-center text-[10px] font-extrabold select-none flex-shrink-0`}
+                            aria-hidden="true"
+                          >
+                            {selectedStaff.initials}
+                          </span>
+                        )}
+                        {selectedStaff?.displayName ?? '—'}
                       </span>
                     </div>
 

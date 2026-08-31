@@ -37,6 +37,10 @@ export const am = {
   sb_v4_success: "ቦታ ማስያዙ በተሳካ ሁኔታ ተሞክሯል!",
   sb_v4_desc: "በእውነተኛ ሲስተም ላይ ደንበኛው በኢትዮ ቴሌኮም በኩል ፈጣን የኤስኤምኤስ (SMS) መልእክት ይደርሰዋል፤ የሰራተኛው ካላንደርም ወዲያውኑ ይዘመናል።",
   sb_v4_restart: "← በሌላ አገልግሎት ይሞክሩ",
+  sandbox_service_auto_detail: "ዘመናዊ የመኪና ስርዊት",
+  sandbox_service_auto_detail_desc: "ሙሉ ማጠቢያ፣ ቀለም ጥበቃ እና የውስጥ ማፅጃ",
+  sandbox_service_vip_grooming: "የቪአይፒ ፀጉር አስተካካይ",
+  sandbox_service_vip_grooming_desc: "ባለሙያ ቅስቀሳ፣ የሚያሞቅ ፎጣ እና የቆዳ ሕክምና",
 
   // Industries Section
   ind_sub: "እኛ የምናገለግላቸው ኢንዱስትሪዎች",
