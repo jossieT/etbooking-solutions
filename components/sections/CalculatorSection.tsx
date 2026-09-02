@@ -231,10 +231,14 @@ export function CalculatorSection({ onProposalRequest }: CalculatorSectionProps)
           </div>
 
           {/* Pricing Screen Side (Right) */}
-          <div className="lg:col-span-5 bg-gradient-to-tr from-primary-900 to-primary-950 rounded-3xl p-6 sm:p-8 text-white flex flex-col justify-between shadow-xl">
-            <div className="space-y-6">
+          <div className="lg:col-span-5 bg-slate-900 bg-gradient-to-br from-primary-900 via-slate-900 to-primary-950 rounded-3xl p-6 sm:p-8 text-white flex flex-col justify-between shadow-2xl border border-slate-700/50 relative overflow-hidden">
+            {/* Ambient decorative background glows */}
+            <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary-500/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="relative z-10 space-y-6">
               <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-widest text-primary-300 font-extrabold">
+                <span className="text-xs uppercase tracking-widest text-primary-200 font-extrabold">
                   {t('calc_bill_est')}
                 </span>
                 <span className="text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2.5 py-1 rounded-full font-bold">
@@ -244,46 +248,46 @@ export function CalculatorSection({ onProposalRequest }: CalculatorSectionProps)
 
               {/* Pricing Display */}
               <div className="space-y-1">
-                <span className="text-[10px] uppercase text-primary-300 block font-bold">
+                <span className="text-[10px] uppercase text-primary-200 block font-bold tracking-wider">
                   {t('calc_p_etb')}
                 </span>
-                <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
+                <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white drop-shadow-sm">
                   {formatPriceETB(prices.totalETB)}
                 </h2>
-                <div className="h-px bg-primary-800/60 my-4"></div>
-                <span className="text-[10px] uppercase text-primary-300 block font-bold">
+                <div className="h-px bg-slate-700/80 my-4"></div>
+                <span className="text-[10px] uppercase text-slate-300 block font-bold tracking-wider">
                   {t('calc_p_usd')}
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-300">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-200">
                   {formatPriceUSD(prices.totalUSD)}
                 </h3>
               </div>
 
               {/* Inclusions List */}
-              <ul className="space-y-2 text-xs text-primary-200/90 pt-4">
-                <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-circle-check text-emerald-400 flex-shrink-0"></i>
+              <ul className="space-y-2.5 text-xs text-slate-200 pt-4">
+                <li className="flex items-center gap-2.5">
+                  <i className="fa-solid fa-circle-check text-emerald-400 flex-shrink-0 text-sm"></i>
                   <span>{t('calc_inc_1')}</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-circle-check text-emerald-400 flex-shrink-0"></i>
+                <li className="flex items-center gap-2.5">
+                  <i className="fa-solid fa-circle-check text-emerald-400 flex-shrink-0 text-sm"></i>
                   <span>{t('calc_inc_2')}</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-circle-check text-emerald-400 flex-shrink-0"></i>
+                <li className="flex items-center gap-2.5">
+                  <i className="fa-solid fa-circle-check text-emerald-400 flex-shrink-0 text-sm"></i>
                   <span>{t('calc_inc_3')}</span>
                 </li>
               </ul>
             </div>
 
-            <div className="pt-8 space-y-4">
+            <div className="relative z-10 pt-8 space-y-4">
               <button
                 onClick={handleRequestProposal}
-                className="w-full block text-center bg-white hover:bg-slate-100 text-primary-950 font-bold py-4 rounded-2xl transition-all shadow-md transform hover:-translate-y-0.5"
+                className="w-full block text-center bg-white hover:bg-slate-100 text-slate-950 font-bold py-4 rounded-2xl transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cursor-pointer"
               >
                 {t('calc_cta')}
               </button>
-              <p className="text-[10px] text-center text-primary-300">{t('calc_disclaimer')}</p>
+              <p className="text-[10px] text-center text-slate-300">{t('calc_disclaimer')}</p>
             </div>
           </div>
         </div>
