@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from '@/hooks/useTranslation';
 import { fadeInUp } from '@/lib/animations';
-import { Sparkles, CheckCircle2, RotateCcw, Clock, User, Calendar, CreditCard, ChevronRight } from 'lucide-react';
+import { Sparkles, CheckCircle2, RotateCcw, Clock, User, Calendar, CreditCard, ChevronRight, MousePointerClick, Smartphone, ArrowRight } from 'lucide-react';
 
 interface SandboxService {
   price: number;
@@ -112,7 +112,7 @@ export function BookingSandboxSection() {
         {/* Section Header */}
         <motion.div
           {...fadeInUp}
-          className="text-center space-y-3 mb-8 sm:mb-10"
+          className="text-center space-y-3 mb-6 sm:mb-8"
         >
           <div className="inline-flex items-center space-x-2 bg-primary-50 dark:bg-primary-950/60 border border-primary-100 dark:border-primary-900 px-3.5 py-1.5 rounded-full">
             <Sparkles className="w-3.5 h-3.5 text-primary-600 dark:text-primary-400" />
@@ -128,6 +128,29 @@ export function BookingSandboxSection() {
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             {t('sandbox_sub')}
           </p>
+
+          {/* Interactive Simulation Roadmap Strip */}
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs font-semibold text-slate-600 dark:text-slate-400 max-w-3xl mx-auto pt-3">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 dark:bg-primary-950/70 border border-primary-200 dark:border-primary-800 text-primary-700 dark:text-primary-300">
+              <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
+              {language === 'am' ? '1. አገልግሎት ይምረጡ' : '1. Choose Service'}
+            </span>
+            <ArrowRight className="w-3.5 h-3.5 text-slate-400 hidden sm:inline-block" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 text-slate-700 dark:text-slate-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+              {language === 'am' ? '2. ሰዓት እና ባለሙያ' : '2. Time & Staff'}
+            </span>
+            <ArrowRight className="w-3.5 h-3.5 text-slate-400 hidden sm:inline-block" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 text-slate-700 dark:text-slate-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              {language === 'am' ? '3. ቴሌብር/ንግድ ባንክ ክፍያ' : '3. Mock Telebirr/CBE'}
+            </span>
+            <ArrowRight className="w-3.5 h-3.5 text-slate-400 hidden sm:inline-block" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 text-slate-700 dark:text-slate-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              {language === 'am' ? '4. ፈጣን የኤስኤምኤስ ማረጋገጫ' : '4. Automated SMS'}
+            </span>
+          </div>
         </motion.div>
 
         {/* Centered Elevated Sandbox Card */}
@@ -136,18 +159,23 @@ export function BookingSandboxSection() {
           className="relative max-w-4xl mx-auto rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-2xl shadow-slate-200/50 dark:shadow-black/50 backdrop-blur-xl overflow-hidden"
         >
           {/* Card Top Banner */}
-          <div className="px-6 py-5 border-b border-slate-100 dark:border-slate-800/80 bg-slate-50/50 dark:bg-slate-900/50 flex flex-wrap items-center justify-between gap-4">
+          <div className="px-6 py-5 border-b border-slate-100 dark:border-slate-800/80 bg-slate-50/70 dark:bg-slate-900/60 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center space-x-3">
-              <span className="flex h-3 w-3 relative">
+              <span className="flex h-3.5 w-3.5 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
               </span>
               <div>
-                <h3 className="text-sm font-bold text-slate-900 dark:text-white">
-                  {t('sandbox_header')}
-                </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
-                  {language === 'am' ? 'የ 3 ደረጃ ፈጣን የቦታ ማስያዣ ማሳያ' : '3-Step Seamless Reservation Flow'}
+                <div className="flex items-center gap-2">
+                  <h3 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">
+                    {language === 'am' ? 'የቀጥታ የቦታ ማስያዣ ሲሙሌተር' : 'Live Booking Simulator'}
+                  </h3>
+                  <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
+                    {language === 'am' ? 'ተግባራዊ ሙከራ' : 'Click to Test'}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                  {language === 'am' ? 'የ 3 ደረጃ ፈጣን የቦታ ማስያዣ ማሳያ' : 'Experience the end-to-end customer reservation & payment flow'}
                 </p>
               </div>
             </div>
@@ -156,7 +184,7 @@ export function BookingSandboxSection() {
               {sandboxStep > 1 && (
                 <button
                   onClick={resetSandbox}
-                  className="inline-flex items-center space-x-1.5 text-xs text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+                  className="inline-flex items-center space-x-1.5 text-xs text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors cursor-pointer"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
                   <span>{language === 'am' ? 'እንደገና ጀምር' : 'Reset'}</span>
@@ -244,15 +272,28 @@ export function BookingSandboxSection() {
                   transition={{ duration: 0.25 }}
                   className="space-y-5"
                 >
-                  <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-                      {t('sb_v1_title')}
-                    </h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">
-                      {language === 'am'
-                        ? 'ለማስያዝ ከታች ካሉት አገልግሎቶች አንዱን ይምረጡ'
-                        : 'Choose a service vertical to test the automated workflow'}
-                    </p>
+                  {/* Interactive Action Prompt Banner */}
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-gradient-to-r from-primary-50 via-blue-50/60 to-primary-50 dark:from-primary-950/50 dark:via-slate-900 dark:to-primary-950/50 border border-primary-200/80 dark:border-primary-800/70 shadow-xs">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-primary-600 text-white flex items-center justify-center shadow-md shadow-primary-500/20 flex-shrink-0">
+                        <MousePointerClick className="w-5 h-5 animate-bounce" />
+                      </div>
+                      <div>
+                        <span className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white block">
+                          {language === 'am'
+                            ? 'የማስመሰያ ሙከራውን ለመጀመር ከታች ካሉት አገልግሎቶች አንዱን ይጫኑ'
+                            : 'Click any service below to test the automated booking flow'}
+                        </span>
+                        <span className="text-[11px] text-slate-500 dark:text-slate-400">
+                          {language === 'am'
+                            ? 'ምንም እውነተኛ ክፍያ አያስፈልግም • ፈጣን የደንበኛ ተሞክሮ ማሳያ'
+                            : 'Fully interactive simulation • No real payment required'}
+                        </span>
+                      </div>
+                    </div>
+                    <span className="self-start sm:self-center text-[11px] font-extrabold text-primary-700 dark:text-primary-300 bg-white dark:bg-slate-900 px-3 py-1 rounded-full border border-primary-200 dark:border-primary-800 shadow-xs flex-shrink-0">
+                      Step 1 of 3
+                    </span>
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
@@ -260,34 +301,43 @@ export function BookingSandboxSection() {
                       <button
                         key={service.type}
                         onClick={() => handleSelectService(service)}
-                        className="flex flex-col justify-between p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 text-left bg-slate-50/70 hover:bg-slate-50 dark:bg-slate-800/40 dark:hover:bg-slate-800/80 transition-all duration-200 hover:shadow-md group cursor-pointer"
+                        className="group relative flex flex-col justify-between p-5 sm:p-6 rounded-2xl border-2 border-slate-200/90 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 text-left bg-slate-50/80 hover:bg-white dark:bg-slate-800/40 dark:hover:bg-slate-800/90 transition-all duration-200 hover:shadow-xl hover:shadow-primary-500/10 hover:-translate-y-1 cursor-pointer"
                       >
+                        {/* Interactive prompt badge */}
+                        <div className="absolute top-4 right-4 text-[10px] font-bold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/80 px-2.5 py-1 rounded-full border border-primary-200 dark:border-primary-800 group-hover:bg-primary-600 group-hover:text-white transition-colors flex items-center gap-1 shadow-2xs">
+                          <MousePointerClick className="w-3 h-3" />
+                          <span>{language === 'am' ? 'ይጫኑ' : 'Click to test'}</span>
+                        </div>
+
                         <div className="flex items-start gap-4 mb-4">
                           <div
-                            className={`w-12 h-12 rounded-xl ${service.bgColor} flex items-center justify-center ${service.iconColor} text-lg group-hover:scale-110 transition-transform`}
+                            className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl ${service.bgColor} flex items-center justify-center ${service.iconColor} text-xl group-hover:scale-110 transition-transform shadow-xs`}
                           >
                             <i className={service.icon}></i>
                           </div>
-                          <div>
-                            <h5 className="font-bold text-slate-900 dark:text-white text-base group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                          <div className="pr-16">
+                            <h5 className="font-bold text-slate-900 dark:text-white text-base sm:text-lg group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                               {t(service.nameKey)}
                             </h5>
-                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">
                               {t(service.descKey)}
                             </p>
                           </div>
                         </div>
 
-                        <div className="flex items-center justify-between pt-3 border-t border-slate-200/60 dark:border-slate-700/60">
-                          <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
-                            <Clock className="w-3.5 h-3.5" />
+                        <div className="flex items-center justify-between pt-3.5 border-t border-slate-200/80 dark:border-slate-700/80">
+                          <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 font-medium">
+                            <Clock className="w-3.5 h-3.5 text-slate-400" />
                             <span>{service.duration}</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <span className="font-bold text-base text-primary-600 dark:text-primary-400">
+                            <span className="font-extrabold text-base text-slate-900 dark:text-white">
                               {service.price.toLocaleString()} ETB
                             </span>
-                            <ChevronRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
+                            <span className="inline-flex items-center gap-1 text-xs font-bold text-white bg-primary-600 group-hover:bg-primary-700 px-3 py-1.5 rounded-xl shadow-xs transition-colors">
+                              <span>{language === 'am' ? 'ጀምር' : 'Simulate'}</span>
+                              <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                            </span>
                           </div>
                         </div>
                       </button>
@@ -529,14 +579,39 @@ export function BookingSandboxSection() {
                     </p>
                   </div>
 
-                  <div className="pt-2">
+                  {/* Simulated SMS Notification Bubble */}
+                  <div className="max-w-md mx-auto p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700 text-left space-y-2.5 shadow-sm">
+                    <div className="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 font-semibold border-b border-slate-200 dark:border-slate-700/80 pb-2">
+                      <span className="flex items-center gap-1.5 text-primary-600 dark:text-primary-400 font-bold">
+                        <Smartphone className="w-3.5 h-3.5" />
+                        <span>{language === 'am' ? 'የተላከ የኤስኤምኤስ መልእክት (Ethio Telecom)' : 'Simulated Client SMS (Ethio Telecom)'}</span>
+                      </span>
+                      <span className="text-[10px] bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 px-2 py-0.5 rounded-full font-bold">Delivered</span>
+                    </div>
+                    <div className="bg-white dark:bg-slate-900 p-3.5 rounded-xl border border-slate-200/70 dark:border-slate-800 shadow-inner">
+                      <p className="text-xs text-slate-800 dark:text-slate-200 font-mono leading-relaxed">
+                        {language === 'am'
+                          ? `ውድ ደንበኛ፣ የ${selectedService ? t(selectedService.nameKey) : 'አገልግሎት'} ቀጠሮዎ ከ${selectedStaff?.displayName || 'ባለሙያ'} ጋር ለ${selectedTime?.split(' ')[0] || '10:00 AM'} በተሳካ ሁኔታ ተይዟል። ኮድ: ETB-9842። እናመሰግናለን!`
+                          : `Dear Customer, your reservation for ${selectedService ? t(selectedService.nameKey) : 'Service'} with ${selectedStaff?.displayName || 'Specialist'} is confirmed for ${selectedTime?.split(' ')[0] || '10:00 AM'}. Ref: ETB-9842. Thank you for booking!`}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                     <button
                       onClick={resetSandbox}
-                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs sm:text-sm font-semibold text-primary-600 dark:text-primary-400 transition-colors"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs sm:text-sm font-semibold text-primary-600 dark:text-primary-400 transition-colors cursor-pointer"
                     >
                       <RotateCcw className="w-3.5 h-3.5" />
                       <span>{t('sb_v4_restart')}</span>
                     </button>
+                    <a
+                      href="#contact"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all"
+                    >
+                      <span>{language === 'am' ? 'ይህን ሲስተም ለድርጅትዎ ያበጁ' : 'Get This System Built For You'}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
                   </div>
                 </motion.div>
               )}

@@ -20,7 +20,7 @@ export const en = {
 
   // Sandbox Demo
   sandbox_header: "Interactive Booking Sandbox",
-  sandbox_sub: "Experience booking a local service in real-time",
+  sandbox_sub: "Test our live booking simulation: click through the steps below to experience automated scheduling, dummy Telebirr / CBE payment, and instant SMS confirmation.",
   sb_step1: "Service",
   sb_step2: "Time & Staff",
   sb_step3: "Payment",

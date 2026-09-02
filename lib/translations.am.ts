@@ -19,8 +19,8 @@ export const am = {
   trust_3: "ፈጣን የኤስኤምኤስ (SMS) መልእክቶች",
 
   // Sandbox Demo
-  sandbox_header: "የማሳያ ቦታ ማስያዣ (Sandbox)",
-  sandbox_sub: "እውነተኛ ቦታ ማስያዝን አሁን ይሞክሩት",
+  sandbox_header: "የማሳያ ቦታ ማስያዣ (Interactive Sandbox)",
+  sandbox_sub: "የቦታ ማስያዣ ሲስተሙን በቀጥታ ይሞክሩት፡ ከታች ያሉትን ደረጃዎች በመጫን የቀጠሮ መረጣ፣ የቴሌብር/ንግድ ባንክ ክፍያ እና የኤስኤምኤስ ማረጋገጫ እንዴት እንደሚሰራ እራስዎ ይለማመዱ።",
   sb_step1: "አገልግሎት",
   sb_step2: "ሰዓት እና ሰራተኛ",
   sb_step3: "ክፍያ",
