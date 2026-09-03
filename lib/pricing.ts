@@ -22,7 +22,7 @@ export const PRICING_CONFIG = {
     analytics: { name: 'Enterprise Reporting Dashboard', cost: 12000 },
   },
 
-  usdExchangeRate: 120, // ETB to USD
+  usdExchangeRate: 165, // ETB to USD
 };
 
 export interface CalculatorInputs {

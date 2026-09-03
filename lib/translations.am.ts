@@ -95,6 +95,7 @@ export const am = {
   calc_biz_label: "የድርጅቱ ዘርፍ",
   calc_staff_label: "የሰራተኞች ብዛት",
   calc_feat_label: "የሚያስፈልጉ የሲስተም አቅሞች",
+  c_feat_portal: "የተለየ የደንበኛ ገጽ (Portal)",
   c_feat_cportal: "የተለየ የደንበኛ ገጽ (Portal)",
   c_feat_sms: "የኤስኤምኤስ (SMS) መልእክቶች",
   c_feat_payments: "የቴሌብርር እና ቻፃ ክፍያዎች",

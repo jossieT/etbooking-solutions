@@ -95,6 +95,7 @@ export const en = {
   calc_biz_label: "Business Category",
   calc_staff_label: "Maximum Staff Size",
   calc_feat_label: "Select System Capabilities Required",
+  c_feat_portal: "Dedicated Customer Portal",
   c_feat_cportal: "Dedicated Customer Portal",
   c_feat_sms: "Natively Built SMS Alerts",
   c_feat_payments: "Telebirr & Chapa Payment Gateways",

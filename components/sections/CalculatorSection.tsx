@@ -203,6 +203,7 @@ export function CalculatorSection({ onProposalRequest }: CalculatorSectionProps)
                 {Object.entries(PRICING_CONFIG.features).map(([id, feature]) => {
                   const isChecked = selectedFeatures.includes(id);
                   const translationKey = `c_feat_${id === 'analytics' ? 'analytic' : id === 'mobile' ? 'mob' : id}`;
+                  const labelText = t(translationKey) !== translationKey ? t(translationKey) : feature.name;
 
                   return (
                     <label
@@ -218,7 +219,7 @@ export function CalculatorSection({ onProposalRequest }: CalculatorSectionProps)
                         className="mt-1 w-4.5 h-4.5 text-primary-600 rounded cursor-pointer"
                       />
                       <div>
-                        <span className="text-xs font-bold block">{t(translationKey)}</span>
+                        <span className="text-xs font-bold block">{labelText}</span>
                         <span className="text-[10px] text-emerald-500 font-semibold">
                           +{feature.cost.toLocaleString()} ETB
                         </span>
