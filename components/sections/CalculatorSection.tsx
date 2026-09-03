@@ -82,11 +82,11 @@ export function CalculatorSection({ onProposalRequest }: CalculatorSectionProps)
   return (
     <section
       id="calculator"
-      className="py-24 bg-gradient-to-tr from-slate-100/60 to-slate-200/40 dark:from-slate-900/40 dark:to-slate-950/20"
+      className="py-14 sm:py-16 bg-gradient-to-tr from-slate-100/60 to-slate-200/40 dark:from-slate-900/40 dark:to-slate-950/20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-4">
           <motion.span
             className="text-xs font-bold uppercase tracking-widest text-primary-600 dark:text-primary-400"
             initial={{ opacity: 0, y: 10 }}
@@ -139,14 +139,14 @@ export function CalculatorSection({ onProposalRequest }: CalculatorSectionProps)
                     <button
                       key={id}
                       onClick={() => setBusinessType(id)}
-                      className={`p-3 rounded-2xl text-left transition-all text-xs font-semibold cursor-pointer border ${
+                      className={`p-3 rounded-2xl text-left transition-all text-xs font-semibold cursor-pointer border flex items-center gap-2.5 ${
                         isActive
-                          ? 'border-primary-500 bg-primary-50/50 dark:bg-primary-950/30'
-                          : 'border-slate-200 dark:border-slate-800 hover:border-primary-500'
+                          ? 'border-primary-500 bg-primary-50/70 dark:bg-primary-950/40 text-primary-900 dark:text-primary-100 shadow-xs ring-1 ring-primary-500/20'
+                          : 'border-slate-200 dark:border-slate-800 hover:border-primary-500 text-slate-700 dark:text-slate-300'
                       }`}
                     >
-                      <i className={`${icon} mb-1 block text-primary-500 text-sm`}></i>
-                      <span>{biz.name}</span>
+                      <i className={`${icon} text-primary-500 text-sm flex-shrink-0`}></i>
+                      <span className="leading-tight">{biz.name}</span>
                     </button>
                   );
                 })}

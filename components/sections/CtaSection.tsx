@@ -8,7 +8,7 @@ export function CtaSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="py-20 relative overflow-hidden bg-primary-950 text-white text-center">
+    <section className="py-14 sm:py-16 relative overflow-hidden bg-primary-950 text-white text-center">
       {/* Background graphics */}
       <div className="absolute inset-0 bg-gradient-to-tr from-primary-950 to-primary-900 z-0"></div>
       <div className="absolute -bottom-10 -left-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-[80px] pointer-events-none"></div>

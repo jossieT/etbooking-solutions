@@ -19,10 +19,10 @@ export function CapabilitiesSection() {
     }`;
 
   return (
-    <section id="capabilities" className="py-24">
+    <section id="capabilities" className="py-14 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-4">
           <span className="text-xs font-bold uppercase tracking-widest text-primary-600 dark:text-primary-400">
             {t('cap_badge')}
           </span>

@@ -32,6 +32,7 @@ export function BookingSandboxSection() {
   const [selectedService, setSelectedService] = useState<SandboxService | null>(null);
   const [selectedStaff, setSelectedStaff] = useState<SandboxStaff | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<'telebirr' | 'chapa'>('telebirr');
 
   const services: SandboxService[] = [
     {
@@ -98,11 +99,12 @@ export function BookingSandboxSection() {
     setSelectedService(null);
     setSelectedStaff(null);
     setSelectedTime(null);
+    setSelectedPaymentMethod('telebirr');
     setSandboxStep(1);
   };
 
   return (
-    <section id="sandbox" className="pt-4 pb-20 sm:pt-6 sm:pb-28 relative scroll-mt-20">
+    <section id="sandbox" className="pt-2 pb-10 sm:pt-4 sm:pb-14 relative scroll-mt-20">
       {/* Background ambient accents */}
       <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-primary-500/5 rounded-full blur-[140px]" />
@@ -515,43 +517,93 @@ export function BookingSandboxSection() {
 
                   {/* Payment Channel Preview */}
                   <div className="space-y-3">
-                    <h5 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-                      {t('sb_payment_channel')}
-                    </h5>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="flex items-center gap-3 p-4 border border-blue-200 dark:border-blue-900/60 rounded-2xl bg-gradient-to-tr from-blue-500/10 to-blue-500/5 dark:from-blue-500/20 dark:to-transparent cursor-pointer hover:border-blue-500 transition-all">
-                        <div className="w-3 h-3 rounded-full bg-blue-600"></div>
-                        <div>
+                    <div className="flex items-center justify-between">
+                      <h5 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                        {t('sb_payment_channel')}
+                      </h5>
+                      <span className="text-[11px] font-semibold text-primary-600 dark:text-primary-400">
+                        {language === 'am' ? 'የሚመርጡትን ክፍያ ይጫኑ' : 'Select preferred gateway'}
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3" role="radiogroup" aria-label="Payment method">
+                      {/* Telebirr */}
+                      <button
+                        type="button"
+                        role="radio"
+                        aria-checked={selectedPaymentMethod === 'telebirr'}
+                        onClick={() => setSelectedPaymentMethod('telebirr')}
+                        className={`relative flex items-center gap-3 p-4 rounded-2xl transition-all duration-200 text-left cursor-pointer ${
+                          selectedPaymentMethod === 'telebirr'
+                            ? 'border-2 border-blue-500 bg-blue-50/90 dark:bg-blue-950/60 shadow-md ring-2 ring-blue-500/20'
+                            : 'border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 opacity-70 hover:opacity-100 hover:border-blue-300 dark:hover:border-blue-900/60'
+                        }`}
+                      >
+                        <div className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-blue-500 flex-shrink-0">
+                          {selectedPaymentMethod === 'telebirr' && (
+                            <div className="w-2.5 h-2.5 rounded-full bg-blue-600"></div>
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
                           <span className="text-xs font-bold text-slate-900 dark:text-white block">
                             Telebirr
                           </span>
-                          <span className="text-[10px] text-slate-500 dark:text-slate-400">
+                          <span className="text-[10px] text-slate-500 dark:text-slate-400 block truncate">
                             Instant PIN Checkout
                           </span>
                         </div>
-                      </div>
+                        {selectedPaymentMethod === 'telebirr' && (
+                          <span className="hidden sm:inline-block text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">
+                            Active
+                          </span>
+                        )}
+                      </button>
 
-                      <div className="flex items-center gap-3 p-4 border border-emerald-200 dark:border-emerald-900/60 rounded-2xl bg-gradient-to-tr from-emerald-500/10 to-emerald-500/5 dark:from-emerald-500/20 dark:to-transparent cursor-pointer hover:border-emerald-500 transition-all">
-                        <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
-                        <div>
+                      {/* Chapa (CBE Birr) */}
+                      <button
+                        type="button"
+                        role="radio"
+                        aria-checked={selectedPaymentMethod === 'chapa'}
+                        onClick={() => setSelectedPaymentMethod('chapa')}
+                        className={`relative flex items-center gap-3 p-4 rounded-2xl transition-all duration-200 text-left cursor-pointer ${
+                          selectedPaymentMethod === 'chapa'
+                            ? 'border-2 border-emerald-500 bg-emerald-50/90 dark:bg-emerald-950/60 shadow-md ring-2 ring-emerald-500/20'
+                            : 'border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 opacity-70 hover:opacity-100 hover:border-emerald-300 dark:hover:border-emerald-900/60'
+                        }`}
+                      >
+                        <div className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-emerald-500 flex-shrink-0">
+                          {selectedPaymentMethod === 'chapa' && (
+                            <div className="w-2.5 h-2.5 rounded-full bg-emerald-600"></div>
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
                           <span className="text-xs font-bold text-slate-900 dark:text-white block">
                             Chapa (CBE Birr)
                           </span>
-                          <span className="text-[10px] text-slate-500 dark:text-slate-400">
+                          <span className="text-[10px] text-slate-500 dark:text-slate-400 block truncate">
                             Direct Bank & Card
                           </span>
                         </div>
-                      </div>
+                        {selectedPaymentMethod === 'chapa' && (
+                          <span className="hidden sm:inline-block text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300">
+                            Active
+                          </span>
+                        )}
+                      </button>
                     </div>
                   </div>
 
                   {/* Submit Confirmation Button */}
                   <button
                     onClick={() => setSandboxStep(4)}
-                    className="w-full bg-gradient-to-r from-emerald-500 via-teal-600 to-emerald-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-4 rounded-2xl text-sm transition-all duration-200 tracking-wider uppercase shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-[0.99]"
+                    className="w-full bg-gradient-to-r from-emerald-500 via-teal-600 to-emerald-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-4 rounded-2xl text-sm transition-all duration-200 tracking-wider uppercase shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
                   >
                     <CreditCard className="w-4 h-4" />
-                    <span>{t('sb_v3_book')}</span>
+                    <span>
+                      {language === 'am'
+                        ? `በ${selectedPaymentMethod === 'telebirr' ? 'ቴሌብር' : 'ቻፓ'} ክፍያውን ይሞክሩ`
+                        : `Simulate ${selectedPaymentMethod === 'telebirr' ? 'Telebirr' : 'Chapa'} Payment`}
+                    </span>
                   </button>
                 </motion.div>
               )}
@@ -591,8 +643,8 @@ export function BookingSandboxSection() {
                     <div className="bg-white dark:bg-slate-900 p-3.5 rounded-xl border border-slate-200/70 dark:border-slate-800 shadow-inner">
                       <p className="text-xs text-slate-800 dark:text-slate-200 font-mono leading-relaxed">
                         {language === 'am'
-                          ? `ውድ ደንበኛ፣ የ${selectedService ? t(selectedService.nameKey) : 'አገልግሎት'} ቀጠሮዎ ከ${selectedStaff?.displayName || 'ባለሙያ'} ጋር ለ${selectedTime?.split(' ')[0] || '10:00 AM'} በተሳካ ሁኔታ ተይዟል። ኮድ: ETB-9842። እናመሰግናለን!`
-                          : `Dear Customer, your reservation for ${selectedService ? t(selectedService.nameKey) : 'Service'} with ${selectedStaff?.displayName || 'Specialist'} is confirmed for ${selectedTime?.split(' ')[0] || '10:00 AM'}. Ref: ETB-9842. Thank you for booking!`}
+                          ? `ውድ ደንበኛ፣ የ${selectedService ? t(selectedService.nameKey) : 'አገልግሎት'} ቀጠሮዎ ከ${selectedStaff?.displayName || 'ባለሙያ'} ጋር ለ${selectedTime?.split(' ')[0] || '10:00 AM'} በተሳካ ሁኔታ ተይዟል። ክፍያ በ${selectedPaymentMethod === 'telebirr' ? 'ቴሌብር' : 'ቻፓ'} ተረጋግጧል። ኮድ: ETB-9842። እናመሰግናለን!`
+                          : `Dear Customer, your reservation for ${selectedService ? t(selectedService.nameKey) : 'Service'} with ${selectedStaff?.displayName || 'Specialist'} is confirmed for ${selectedTime?.split(' ')[0] || '10:00 AM'}. Paid via ${selectedPaymentMethod === 'telebirr' ? 'Telebirr' : 'Chapa (CBE Birr)'}. Ref: ETB-9842. Thank you for booking!`}
                       </p>
                     </div>
                   </div>

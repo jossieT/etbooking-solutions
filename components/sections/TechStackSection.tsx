@@ -112,11 +112,11 @@ export function TechStackSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="py-20 border-t border-b border-slate-200 dark:border-slate-800 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 overflow-hidden">
+    <section className="py-14 sm:py-16 border-t border-b border-slate-200 dark:border-slate-800 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center mb-12 space-y-3">
+        <div className="text-center mb-8 sm:mb-10 space-y-3">
           <motion.span
             className="inline-block text-xs font-bold uppercase tracking-widest text-primary-600 dark:text-primary-400"
             initial={{ opacity: 0, y: 8 }}

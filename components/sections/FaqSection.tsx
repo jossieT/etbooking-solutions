@@ -17,10 +17,10 @@ export function FaqSection() {
   };
 
   return (
-    <section id="faq" className="py-24">
+    <section id="faq" className="py-14 sm:py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-10 sm:mb-12 space-y-4">
           <motion.span
             className="text-xs font-bold uppercase tracking-widest text-primary-600 dark:text-primary-400"
             initial={{ opacity: 0, y: 10 }}

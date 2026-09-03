@@ -70,7 +70,7 @@ export function ContactSection({ requirementsText }: ContactSectionProps) {
   };
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="py-14 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12">
           {/* Left Details Info */}
